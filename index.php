@@ -85,9 +85,6 @@
 
 		       		?> 
 	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
-	        	</div>
 	        </div>
 	      </section>
 	     
