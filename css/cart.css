@@ -1,0 +1,50 @@
+.box-body {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 3rem;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 2px 5px 4px #888888;
+}
+
+.table > tbody > tr > td,
+.table > thead > tr > th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table > caption + thead > tr:first-child > td,
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > td,
+.table > thead:first-child > tr:first-child > th {
+  background: #222;
+  color: #fff;
+}
+
+.row button {
+  background: #088178;
+  color: #fff;
+  border-radius: 5px;
+  border-color: #088178;
+}
+
+.checkout {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.checkout button {
+  padding: 10px;
+  background: #088178;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 15rem;
+}
+
+.checkout button a {
+  color: #fff;
+}

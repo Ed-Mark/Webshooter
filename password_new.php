@@ -1,12 +1,6 @@
 <?php
 	include 'includes/session.php';
 
-	if(!isset($_GET['code']) OR !isset($_GET['user'])){
-		header('location: index.php');
-	    exit(); 
-	}
-
-	$path = 'password_reset.php?code='.$_GET['code'].'&user='.$_GET['user'];
 
 	if(isset($_POST['reset'])){
 		$password = $_POST['password'];
@@ -14,13 +8,13 @@
 
 		if($password != $repassword){
 			$_SESSION['error'] = 'Passwords did not match';
-			header('location: '.$path);
+			header('location: password_forgot.php');
 		}
 		else{
 			$conn = $pdo->open();
 
-			$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users WHERE reset_code=:code AND id=:id");
-			$stmt->execute(['code'=>$_GET['code'], 'id'=>$_GET['user']]);
+			$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users WHERE email=:email");
+			$stmt->execute(['email'=>$_GET['email']]);
 			$row = $stmt->fetch();
 
 			if($row['numrows'] > 0){
@@ -35,12 +29,12 @@
 				}
 				catch(PDOException $e){
 					$_SESSION['error'] = $e->getMessage();
-					header('location: '.$path);
+					header('location: password_forgot.php');
 				}
 			}
 			else{
-				$_SESSION['error'] = 'Code did not match with user';
-				header('location: '.$path);
+				$_SESSION['error'] = 'No user found';
+				header('location: password_forgot.php');
 			}
 
 			$pdo->close();
@@ -49,7 +43,7 @@
 	}
 	else{
 		$_SESSION['error'] = 'Input new password first';
-		header('location: '.$path);
+		header('location: password_forgot.php');
 	}
 
 ?>

@@ -18,7 +18,6 @@
        folder instead of downloading all of them to reduce the load. -->
   	<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
     <!-- Magnify -->
-    <link rel="stylesheet" href="magnify/magnify.min.css">
 
   	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,6 +35,11 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
   	<!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <style type="text/css">
     /* Small devices (tablets, 768px and up) */
     @media (min-width: 768px){ 

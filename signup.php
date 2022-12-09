@@ -14,7 +14,7 @@
 ?>
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition register-page">
-<div class="register-box">
+<div class="register-container">
   	<?php
       if(isset($_SESSION['error'])){
         echo "
@@ -34,40 +34,44 @@
         unset($_SESSION['success']);
       }
     ?>
-  	<div class="register-box-body">
-    	<p class="login-box-msg">Register a new membership</p>
 
-    	<form action="register.php" method="POST">
-          <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="firstname" placeholder="Firstname" value="<?php echo (isset($_SESSION['firstname'])) ? $_SESSION['firstname'] : '' ?>" required>
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  	<div class="register-card">
+    <div class="register-card-header">
+      <h1>REGISTER</h1>
+    </div>
+
+    	<form action="register.php" method="POST" class="register-card-form">
+          <div class="form-item">
+            <span class="form-item-icon material-symbols-rounded">badge</span>
+            <input type="text" name="firstname" placeholder="Firstname" value="<?php echo (isset($_SESSION['firstname'])) ? $_SESSION['firstname'] : '' ?>" required>
           </div>
-          <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="lastname" placeholder="Lastname" value="<?php echo (isset($_SESSION['lastname'])) ? $_SESSION['lastname'] : '' ?>"  required>
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          <div class="form-item">
+            <span class="form-item-icon material-symbols-rounded">badge</span>
+            <input type="text" name="lastname" placeholder="Lastname" value="<?php echo (isset($_SESSION['lastname'])) ? $_SESSION['lastname'] : '' ?>"  required>
           </div>
-      		<div class="form-group has-feedback">
-        		<input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo (isset($_SESSION['email'])) ? $_SESSION['email'] : '' ?>" required>
-        		<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      		<div class="form-item">
+            <span class="form-item-icon material-symbols-rounded">mail</span>
+        		<input type="email" name="email" placeholder="Email" value="<?php echo (isset($_SESSION['email'])) ? $_SESSION['email'] : '' ?>" required>
       		</div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="password" placeholder="Password" required>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          <div class="form-item">
+            <span class="form-item-icon material-symbols-rounded">lock</span>
+            <input type="password"  name="password" placeholder="Password" required>
           </div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="repassword" placeholder="Retype password" required>
-            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+          <div class="form-item">
+            <span class="form-item-icon material-symbols-rounded">lock</span>
+            <input type="password" name="repassword" placeholder="Retype password" required>
           </div>
           <hr>
-      		<div class="row">
-    			<div class="col-xs-4">
-          			<button type="submit" class="btn btn-primary btn-block btn-flat" name="signup"><i class="fa fa-pencil"></i> Sign Up</button>
-        		</div>
-      		</div>
+          			<button type="submit" name="signup"> Sign Up</button>
     	</form>
       <br>
+      <div class="register-footer">
       <a href="login.php">I already have a membership</a><br>
       <a href="index.php"><i class="fa fa-home"></i> Home</a>
+      </div>
   	</div>
 </div>
 	

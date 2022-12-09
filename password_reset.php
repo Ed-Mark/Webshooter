@@ -1,12 +1,7 @@
 <?php include 'includes/session.php'; ?>
-<?php
-  if(!isset($_GET['code']) OR !isset($_GET['user'])){
-    header('location: index.php');
-    exit(); 
-  }
-?>
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition login-page">
+  <div class="wrapper">
 <div class="login-box">
   	<?php
       if(isset($_SESSION['error'])){
@@ -18,25 +13,28 @@
         unset($_SESSION['error']);
       }
     ?>
-  	<div class="login-box-body">
-    	<p class="login-box-msg">Enter new password</p>
 
-    	<form action="password_new.php?code=<?php echo $_GET['code']; ?>&user=<?php echo $_GET['user']; ?>" method="POST">
-      		<div class="form-group has-feedback">
-        		<input type="password" class="form-control" name="password" placeholder="New password" required>
-        		<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+    <link rel="stylesheet" href="css/forgot.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  	<div class="forgot-card">
+      <div class="reset-card-header">
+        <h1>ENTER NEW PASSWORD</h1>
+      </div>
+
+    	<form action="password_new.php?&email=<?php echo $_POST['email']; ?>" method="POST" class="forgot-card-form">
+      		<div class="form-item">
+            <span class="form-item-icon material-symbols-rounded">lock</span>
+        		<input type="password" name="password" placeholder="New password" required>
       		</div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="repassword" placeholder="Re-type password" required>
-            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+          <div class="form-item">
+            <span class="form-item-icon material-symbols-rounded">lock_reset</span>
+            <input type="password" name="repassword" placeholder="Re-type password" required>
           </div>
-      		<div class="row">
-    			<div class="col-xs-4">
-          			<button type="submit" class="btn btn-primary btn-block btn-flat" name="reset"><i class="fa fa-check-square-o"></i> Reset</button>
-        		</div>
-      		</div>
+          			<button type="submit" name="reset"> Reset</button>
     	</form>
   	</div>
+</div>
 </div>
 	
 <?php include 'includes/scripts.php' ?>

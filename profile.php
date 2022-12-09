@@ -5,6 +5,7 @@
 	}
 ?>
 <?php include 'includes/header.php'; ?>
+<link rel="stylesheet" href="css/update.css">
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
 
@@ -15,8 +16,6 @@
 
 	      <!-- Main content -->
 	      <section class="content">
-	        <div class="row">
-	        	<div class="col-sm-9">
 	        		<?php
 	        			if(isset($_SESSION['error'])){
 	        				echo "
@@ -115,11 +114,6 @@
 	        				</table>
 	        			</div>
 	        		</div>
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
-	        	</div>
-	        </div>
 	      </section>
 	     
 	    </div>

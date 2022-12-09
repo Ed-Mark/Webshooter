@@ -5,8 +5,8 @@
   }
 ?>
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition login-page">
-<div class="login-box">
+<body>
+<div class="login-container">
   	<?php
       if(isset($_SESSION['error'])){
         echo "
@@ -25,28 +25,31 @@
         unset($_SESSION['success']);
       }
     ?>
-  	<div class="login-box-body">
-    	<p class="login-box-msg">Sign in to start your session</p>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+  	<div class="login-card">
+    	<div class="login-card-header">
+        <h1>LOGIN</h1>
+      </div>
 
-    	<form action="verify.php" method="POST">
-      		<div class="form-group has-feedback">
-        		<input type="email" class="form-control" name="email" placeholder="Email" required>
-        		<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+    	<form action="verify.php" method="POST" class="login-card-form">
+      		<div class="form-item">
+            <span class="form-item-icon material-symbols-rounded">mail</span>
+        		<input type="email" name="email" placeholder="Email" required>
       		</div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="password" placeholder="Password" required>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          <div class="form-item">
+            <span class="form-item-icon material-symbols-rounded">lock</span>
+            <input type="password" name="password" placeholder="Password" required>
           </div>
-      		<div class="row">
-    			<div class="col-xs-4">
-          			<button type="submit" class="btn btn-primary btn-block btn-flat" name="login"><i class="fa fa-sign-in"></i> Sign In</button>
-        		</div>
-      		</div>
+          	<button type="submit" name="login"> Sign In</button>
     	</form>
       <br>
+      <div class="login-footer">
       <a href="password_forgot.php">I forgot my password</a><br>
-      <a href="signup.php" class="text-center">Register a new membership</a><br>
+      <a href="signup.php">Register a new membership</a><br>
       <a href="index.php"><i class="fa fa-home"></i> Home</a>
+      </div>
   	</div>
 </div>
 	

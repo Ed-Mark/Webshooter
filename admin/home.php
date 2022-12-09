@@ -153,7 +153,7 @@
         <!-- ./col -->
       </div>
       <!-- /.row -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
@@ -185,12 +185,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       </section>
       <!-- right col -->
     </div>
-  	<?php include 'includes/footer.php'; ?>
+  	<?php include '../includes/adminfooter.php'; ?>
 
 </div>
 <!-- ./wrapper -->

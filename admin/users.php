@@ -1,5 +1,6 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
+<link rel="stylesheet" href="css/admin.css">
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -55,7 +56,6 @@
                   <th>Photo</th>
                   <th>Email</th>
                   <th>Name</th>
-                  <th>Status</th>
                   <th>Date Added</th>
                   <th>Tools</th>
                 </thead>
@@ -78,10 +78,6 @@
                             </td>
                             <td>".$row['email']."</td>
                             <td>".$row['firstname'].' '.$row['lastname']."</td>
-                            <td>
-                              ".$status."
-                              ".$active."
-                            </td>
                             <td>".date('M d, Y', strtotime($row['created_on']))."</td>
                             <td>
                               <a href='cart.php?user=".$row['id']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Cart</a>
@@ -107,7 +103,7 @@
     </section>
      
   </div>
-  	<?php include 'includes/footer.php'; ?>
+  	<?php include '../includes/adminfooter.php'; ?>
     <?php include 'includes/users_modal.php'; ?>
 
 </div>

@@ -1,5 +1,6 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
+<link rel="stylesheet" href="css/admin.css">
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -90,7 +91,7 @@
     </section>
      
   </div>
-  	<?php include 'includes/footer.php'; ?>
+  	<?php include '../includes/adminfooter.php'; ?>
     <?php include 'includes/category_modal.php'; ?>
 
 </div>

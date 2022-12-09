@@ -2,7 +2,7 @@
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
-
+	<link rel="stylesheet" href="css/cart.css">
 	<?php include 'includes/navbar.php'; ?>
 	 
 	  <div class="content-wrapper">
@@ -11,7 +11,6 @@
 	      <!-- Main content -->
 	      <section class="content">
 	        <div class="row">
-	        	<div class="col-sm-9">
 	        		<h1 class="page-header">YOUR CART</h1>
 	        		<div class="box box-solid">
 	        			<div class="box-body">
@@ -27,12 +26,11 @@
 		        			<tbody id="tbody">
 		        			</tbody>
 		        		</table>
-	        			</div>
-	        		</div>
-	        		<?php
+						<div class="checkout">
+						<?php
 	        			if(isset($_SESSION['user'])){
 	        				echo "
-	        					<div><a href='checkout.php'>Checkout</a></div>
+	        					<div><button id='check'>Checkout</button></div>
 	        				";
 	        			}
 	        			else{
@@ -40,8 +38,24 @@
 	        					<h4>You need to <a href='login.php'>Login</a> to checkout.</h4>
 	        				";
 	        			}
-	        		?>
-	        	</div>
+						
+	        			?>
+						</div>
+	        			</div>
+	        		</div>
+	        		<!-- <?php
+	        			if(isset($_SESSION['user'])){
+	        				echo "
+	        					<div><button id='check'>Checkout</button></div>
+	        				";
+	        			}
+	        			else{
+	        				echo "
+	        					<h4>You need to <a href='login.php'>Login</a> to checkout.</h4>
+	        				";
+	        			}
+	        		?> -->
+	        	
 	        </div>
 	      </section>
 	     
@@ -127,6 +141,16 @@ $(function(){
 	getTotal();
 
 });
+
+$(document).on('click', '#check', function() {
+	$.ajax({
+		type: 'POST',
+		url: 'checkout.php',
+		success: function(response) {
+			window.location = `sales.php?pay=${response}`;
+		}
+	})
+})
 
 function getDetails(){
 	$.ajax({

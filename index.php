@@ -6,9 +6,66 @@
 	<?php include 'includes/navbar.php'; ?>
 	 
 	  <div class="content-wrapper">
-	    <div class="container">
+	    
 
-	      <!-- Main content -->
+		<section id="hero">
+      <h4>Trade-in-offer</h4>
+      <h2>Super value deals</h2>
+      <h1>On all products</h1>
+      <p>save more with coupons</p>
+      <button href="shop.html">Shop Now</button>
+    </section>
+
+
+    <section id="product1" class="section-p1">
+      <h2>Featured Products</h2>
+      <p>Top Sellers</p>
+      <div class="pro-container">
+		<?php 
+			$conn = $pdo->open();
+
+			try {
+				$stmt = $conn->prepare("SELECT * FROM products");
+				$stmt->execute();
+				foreach ($stmt as $row) {
+					$photo = "images/" .$row['photo'];
+					echo '
+					<a href="product.php?product='.$row['slug'].'">
+						<div class="pro">
+							<img src='.$photo.' alt="" />
+							<div class="des">
+							<span></span>
+							<h5>'.$row['name'].'</h5>
+							<div class="star">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+							</div>
+							<h4>$'.$row['price'].'</h4>
+							</div>
+							<a href="product.php?product='.$row['slug'].'"><i class="fa-solid fa-cart-shopping cart"></i></a>
+						</div>
+						</a>
+					';
+				}
+			} catch(PDOException $e) {
+				echo "Error " .$e;
+			} 
+		?>
+        
+      </div>
+    </section>
+
+    <section id="banner" class="section-m1">
+      <h4>Repair Services</h4>
+      <h2>Up to <span> 70% Off </span> - All Phones & Accessories</h2>
+      <button class="normal">Explore More</button>
+    </section>
+
+
+	      <!-- Main content
 	      <section class="content">
 	        <div class="row">
 	        	<div class="col-sm-9">
@@ -87,8 +144,8 @@
 	        	</div>
 	        </div>
 	      </section>
-	     
-	    </div>
+	      -->
+	
 	  </div>
   
   	<?php include 'includes/footer.php'; ?>

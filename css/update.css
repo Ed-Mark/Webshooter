@@ -1,0 +1,47 @@
+.box-body {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 3rem;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+  box-shadow: 2px 5px 4px #888888;
+}
+
+.box-header.with-border {
+  box-shadow: 2px 0 4px #888888;
+}
+
+.col-sm-3 h4{
+    font-weight: 800;
+}
+.col-sm-9 h4{
+    font-size: 20px;
+}
+
+.col-sm-12 {
+    text-align: center;
+    width: 100%;
+    vertical-align: middle;
+  }
+  
+  .table > caption + thead > tr:first-child > td,
+  .table > caption + thead > tr:first-child > th,
+  .table > colgroup + thead > tr:first-child > td,
+  .table > colgroup + thead > tr:first-child > th,
+  .table > thead:first-child > tr:first-child > td,
+  .table > thead:first-child > tr:first-child > th {
+    border-top: 0;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+  }
+
+  .box-header{
+    background-color: #088178;
+
+  }
+
+  .box-header b, i{
+    color: #fff;
+  }
