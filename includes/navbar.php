@@ -1,5 +1,10 @@
 <section id="header">
       <a href="#"><img src="images/logo1.png" alt="logo" class="logo" /></a>
+      <form method="POST" class="navbar-form navbar-left" action="search.php" style='width: 30%;'>
+          <div class="input-group" style='width: 50%;'>
+              <input type="text" class="form-control" id="navbar-search-input" name="keyword" placeholder="Search for Product" style="width: 100%">
+          </div>
+        </form>
       <div>
         <ul id="navbar">
           <li><a class="active" href="index.php">Home</a></li>
@@ -47,7 +52,7 @@
                     <li class="user-header">
                       <img src="'.$image.'" class="img-circle" alt="User Image" width="30px" height="30px">
 
-                      <p>
+                      <p style="color: white;">
                         '.$user['firstname'].' '.$user['lastname'].'
                         <small>Member since '.date('M. Y', strtotime($user['created_on'])).'</small>
                       </p>
@@ -72,6 +77,7 @@
             }
           ?>
         </ul>
+        
       </div>
     </section>
 
